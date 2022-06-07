@@ -13,6 +13,13 @@
 	justify-content: center;
 }
 
+.new-expense__btn-group {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	gap: 1rem;
+}
+
 .new-expense__group label {
 	margin-left: 0.5rem;
 	margin-bottom: 0.3rem;
@@ -45,9 +52,22 @@
 	padding: 1rem 2rem;
 	font-size: 1rem;
 }
-.new-expense__btn:hover {
+.new-expense__btn--submit:hover {
 	background-color: #f1785a;
 }
-.new-expense__btn:focus {
+.new-expense__btn--submit:focus {
 	background-color: #f26f4e;
+}
+
+.new-expense__btn--cancel {
+	background-color: transparent;
+	color: #293241;
+	border: 1px solid #3d5a80;
+}
+.new-expense__btn--cancel:hover {
+	background-color: #3d5a80;
+	color: #e0fbfc;
+}
+.new-expense__btn--cancel:focus {
+	background-color: #98c1d9;
 }
