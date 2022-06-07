@@ -1,4 +1,5 @@
 import React from "react";
+import Chart from "../Chart/Chart";
 import "./ExpenseFilter.css";
 
 function ExpenseFilter(props) {
@@ -17,7 +18,7 @@ function ExpenseFilter(props) {
 					<option value="2023">2023</option>
 				</select>
 			</div>
-			<div className="expense-filter__chart">chart</div>
+			<Chart />
 		</div>
 	);
 }
