@@ -1,0 +1,25 @@
+.expense-filter {
+	max-width: 900px;
+	margin: 2rem auto 0 auto;
+	padding: 1rem;
+	background-color: #98c1d9;
+	border-radius: 10px;
+	color: #293241;
+	box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.expense-filter__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.expense-filter__header--select {
+	min-width: 200px;
+	height: 2rem;
+}
+
+.expense-filter__header--title {
+	font-size: 1.3rem;
+	font-weight: 600;
+}

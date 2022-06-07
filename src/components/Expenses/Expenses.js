@@ -1,13 +1,30 @@
+import { useState } from "react";
 import ExpenseItem from "./ExpenseItem";
+import ExpenseFilter from "./ExpenseFilter";
 import "./Expenses.css";
 
 function Expenses(props) {
+	const [selectedYear, setSelectedYear] = useState("2022");
+
+	const selectYearHandler = function (year) {
+		setSelectedYear(year);
+	};
+
+	// Filtered Expenses By Year
+	const filteredExpenses = props.items.filter((item) => item.date.getFullYear().toString() === selectedYear);
+
+	// Show a message if there is NO Expenses
+	let expenses = <p className="no-expeses-message">No expenses found for &rarr; '{selectedYear}'</p>;
+
+	// Render expenses
+	if (filteredExpenses.length > 0) {
+		expenses = filteredExpenses.map((item) => <ExpenseItem key={item.id} title={item.title} amount={item.amount} date={item.date} />);
+	}
+
 	return (
-		<div className="expenses">
-			<ExpenseItem title={props.items[0].title} amount={props.items[0].amount} date={props.items[0].date} />
-			<ExpenseItem title={props.items[1].title} amount={props.items[1].amount} date={props.items[1].date} />
-			<ExpenseItem title={props.items[2].title} amount={props.items[2].amount} date={props.items[2].date} />
-			<ExpenseItem title={props.items[3].title} amount={props.items[3].amount} date={props.items[3].date} />
+		<div>
+			<ExpenseFilter selected={selectedYear} onSelectYear={selectYearHandler} />
+			<div className="expenses">{expenses}</div>
 		</div>
 	);
 }
